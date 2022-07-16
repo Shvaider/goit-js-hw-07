@@ -30,8 +30,8 @@ function openImageClick(e) {
   e.preventDefault();
 
   const modal = basicLightbox.create(
-    `
-        <img src="${e.target.src}" width="800" height="600">`,
+    `<div class="modal">
+        <img src="${e.target.dataset.source}" width="800" height="600"> </div>`,
     {
       onShow: () => window.addEventListener('keydown', onPressKeyESC),
       onClose: () => window.removeEventListener('keydown', onPressKeyESC),
