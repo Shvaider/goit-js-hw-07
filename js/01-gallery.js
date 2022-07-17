@@ -45,6 +45,7 @@ function openImageClick(e) {
     }
   }
 }
+
 // вариант 2
 // paletteContainer.addEventListener('click', openImageClick);
 
