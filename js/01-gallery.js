@@ -1,7 +1,7 @@
-import { galleryItems } from './gallery-items.js';
+import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 //вариант 1
-const paletteContainer = document.querySelector('.gallery');
+const paletteContainer = document.querySelector(".gallery");
 
 function createPhotoCardMarkup(galleryItems) {
   return galleryItems
@@ -19,12 +19,12 @@ function createPhotoCardMarkup(galleryItems) {
         </div>
         `;
     })
-    .join('');
+    .join("");
 }
 const cardsMarkup = createPhotoCardMarkup(galleryItems);
-paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup);
+paletteContainer.insertAdjacentHTML("beforeend", cardsMarkup);
 
-paletteContainer.addEventListener('click', openImageClick);
+paletteContainer.addEventListener("click", openImageClick);
 
 function openImageClick(e) {
   e.preventDefault();
@@ -33,14 +33,14 @@ function openImageClick(e) {
     `<div class="modal">
         <img src="${e.target.dataset.source}" width="800" height="600"> </div>`,
     {
-      onShow: () => window.addEventListener('keydown', onPressKeyESC),
-      onClose: () => window.removeEventListener('keydown', onPressKeyESC),
+      onShow: () => window.addEventListener("keydown", onPressKeyESC),
+      onClose: () => window.removeEventListener("keydown", onPressKeyESC),
     }
   );
   modal.show();
 
   function onPressKeyESC(e) {
-    if (e.code === 'Escape') {
+    if (e.code === "Escape") {
       modal.close();
     }
   }
@@ -64,4 +64,3 @@ function openImageClick(e) {
 
 // instance.show()
 // }
-
